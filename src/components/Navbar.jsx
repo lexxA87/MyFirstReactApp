@@ -1,5 +1,7 @@
+import n from './Navbar.module.css';
+
 const Navbar = () =>{
-    return <nav className="nav">
+    return <nav className={n.nav}>
     <div>
       <a>Profile</a>
     </div>
