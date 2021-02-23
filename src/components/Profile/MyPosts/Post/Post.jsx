@@ -1,11 +1,11 @@
 import p from './Post.module.css'
 
-const Post = () =>{
+const Post = (props) =>{
     return <div className = {p.item}>
           <img src="https://funny-photo.s3.amazonaws.com/preview/navi_avatar/smiling-girl-blue-face-effect.jpg"/>
-          post 1
+          {props.message}
           <div>
-              <span>Like</span>
+              <span>{props.likeCount} Like</span>
           </div>
           </div>
 }

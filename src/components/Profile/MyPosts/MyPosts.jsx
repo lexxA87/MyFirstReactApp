@@ -8,9 +8,9 @@ const MyPosts = () =>{
           <textarea></textarea>
           <button>Add post</button>
       </div>
-      <Post/>
-      <Post/>
-      <Post/>
+      <Post message= "Hi! How are you?" likeCount= "13"/>
+      <Post message= "It's my first react app!" likeCount= "23"/>
+      <Post message= "It's very good!" likeCount= "1"/>
     </div>
     
 }
