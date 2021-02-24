@@ -1,7 +1,7 @@
-import p from './Post.module.css'
+import s from './Post.module.css'
 
 const Post = (props) =>{
-    return <div className = {p.item}>
+    return <div className = {s.item}>
           <img src="https://funny-photo.s3.amazonaws.com/preview/navi_avatar/smiling-girl-blue-face-effect.jpg"/>
           {props.message}
           <div>

@@ -1,7 +1,7 @@
-import f from './Footer.module.css';
+import s from './Footer.module.css';
 
 const Footer = () =>{
-    return <footer className={f.footer}>Footer</footer>
+    return <footer className={s.footer}>Footer</footer>
 }
 
 export default Footer;
