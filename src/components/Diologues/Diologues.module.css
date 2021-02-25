@@ -1,3 +1,26 @@
-.diolog {
-  background-color: greenyellow;
+.diologs {
+  /* background-color: greenyellow;  */
+
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+}
+
+.diologsItems {
+  padding: 10px;
+  background-color: gray;
+}
+
+.item a {
+  color: white;
+  text-decoration: none;
+}
+
+.item a.activeLink {
+  color: goldenrod;
+  /* background-color: gray; */
+}
+
+.messages {
+  padding: 10px;
 }
