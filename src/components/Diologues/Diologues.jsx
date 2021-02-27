@@ -17,24 +17,37 @@ const Message = (props) => {
 }
 
 const Diologues = (props) =>{
+    
+    let diologs = [
+        {name: "Lexx", id: "1"},
+        {name: "Lexx2", id: "2"},
+        {name: "Lexx3", id: "3"},
+        {name: "Lexx4", id: "4"},
+        {name: "Lexx5", id: "5"}
+    ]
+    let messages = [
+        {mesaage: "Hi!"},
+        {message: "How are you?"},
+        {message: "Welcome to React!"},
+        {message: "Yooooo!"},
+        {message: "What are you doing?!"},
+        {message: "What's up?!"}
+    ]
+
+    let diologsElements = diologs.map( d => <DiologItem name={d.name} id={d.id} />)
+
+    let messagesElements = messages.map( m => <Message message={m.message} />)
+    
     return (
         <div className={s.diologs}>
             <div className={s.diologsItems}>
 
-                <DiologItem name="Lexx" id="1" />
-                <DiologItem name="Lexx2" id="2" />
-                <DiologItem name="Lexx3" id="3" />
-                <DiologItem name="Lexx4" id="4" />
-                <DiologItem name="Lexx5" id="5" />
+                { diologsElements }
 
                 
             </div>
             <div className={s.messages}>
-                <Message message="Hi!" />
-                <Message message="How are you?" />
-                <Message message="Welcome to React!" />
-                <Message message="Yooooo!" />
-                <Message message="What are you doing?" />
+                { messagesElements }
             </div>
         </div>
     )
