@@ -1,20 +1,10 @@
-import { NavLink } from 'react-router-dom';
+
 import s from './Diologues.module.css';
+import DiologItem from './DiologItem/DiologItem';
+import Message from './Message/Message';
 
-const DiologItem = (props) => {
-    
-    let path = "/messages/" + props.id;
-    
-    return (
-        <div className={s.item}>
-                    <NavLink to={path} activeClassName={s.activeLink}>{props.name}</NavLink>
-                </div>
-    );
-}
 
-const Message = (props) => {
-    return <div className={s.message}>{props.message}</div>
-}
+
 
 const Diologues = (props) =>{
     
