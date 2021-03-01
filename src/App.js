@@ -13,7 +13,7 @@ const App = (props) => {
   return (
     <div className="app-wrapper">
       <Header />
-      <Navbar />
+      <Navbar state={props.state.friendsBlock}/>
       <div className="app-wrapper-content">
         <Route
           path="/profile"

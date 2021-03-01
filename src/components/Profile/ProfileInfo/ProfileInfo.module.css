@@ -1,3 +1,9 @@
 .discription {
   padding: 10px;
 }
+
+.mainImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

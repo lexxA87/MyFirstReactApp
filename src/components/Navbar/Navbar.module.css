@@ -4,11 +4,19 @@
   padding: 20px;
 }
 
+.item {
+  text-align: center;
+  font-size: 20px;
+}
+
 .item a {
   color: white;
   text-decoration: none;
+  text-align: center;
 }
 
 .item a.activeLink {
   color: goldenrod;
 }
+
+

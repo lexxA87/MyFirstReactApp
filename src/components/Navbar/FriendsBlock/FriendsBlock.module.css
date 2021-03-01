@@ -1,0 +1,30 @@
+.avatarImage {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.friendsBlock {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.friend {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.friend a {
+  text-decoration: none;
+  color: white;
+}
+
+.friendsItems {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+}
+
+h3 {
+  text-align: center;
+  color: white;
+}
