@@ -1,10 +1,12 @@
+import { rerenderEntireTree } from "./../render";
+
 let state = {
   profilePage: {
     posts: [
-      { message: "Hi! How are you?", likeCount: 15 },
-      { message: "It's my first React App!", likeCount: 99 },
-      { message: "It's very good!", likeCount: 1 },
-      { message: "It's very very good!", likeCount: 3 },
+      { message: "Hi! How are you?", likeCount: 15, id: 1 },
+      { message: "It's my first React App!", likeCount: 99, id: 2 },
+      { message: "It's very good!", likeCount: 1, id: 3 },
+      { message: "It's very very good!", likeCount: 3, id: 4 },
     ],
   },
   diologsPage: {
@@ -44,8 +46,26 @@ let state = {
         name: "Lexx_3",
         id: "3",
       },
-    ]
-  }
+    ],
+  },
+};
+
+export let addPost = (postMessage) => {
+  let newPost = {
+    message: postMessage,
+    likeCount: 0,
+    id: 5,
+  };
+  state.profilePage.posts.push(newPost);
+  rerenderEntireTree(state);
+};
+
+export let addMessage = (diologMessage) => {
+  let newMessage = {
+    message: diologMessage,
+  };
+  state.diologsPage.messages.push(newMessage);
+  rerenderEntireTree(state);
 };
 
 export default state;
