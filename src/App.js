@@ -13,15 +13,27 @@ const App = (props) => {
   return (
     <div className="app-wrapper">
       <Header />
-      <Navbar state={props.state.friendsBlock}/>
+      <Navbar state={props.state.friendsBlock} />
       <div className="app-wrapper-content">
         <Route
           path="/profile"
-          render={() => <Profile state={props.state.profilePage} addPost={props.addPost}/>}
+          render={() => (
+            <Profile
+              profilePage={props.state.profilePage}
+              addPost={props.addPost}
+              updateNewPostText={props.updateNewPostText}
+            />
+          )}
         />
         <Route
           path="/messages"
-          render={() => <Diologues state={props.state.diologsPage} addMessage={props.addMessage}/>}
+          render={() => (
+            <Diologues
+              diologPage={props.state.diologsPage}
+              addMessage={props.addMessage}
+              updateNewMessageText={props.updateNewMessageText}
+            />
+          )}
         />
         <Route path="/news" render={() => <News />} />
         <Route path="/music" render={() => <Music />} />

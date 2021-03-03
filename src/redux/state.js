@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "./../render";
+let rerenderEntireTree = () => {
+  console.log("State changed!");
+} 
 
 let state = {
   profilePage: {
@@ -8,6 +10,7 @@ let state = {
       { message: "It's very good!", likeCount: 1, id: 3 },
       { message: "It's very very good!", likeCount: 3, id: 4 },
     ],
+    newPostText: "",
   },
   diologsPage: {
     diologs: [
@@ -25,6 +28,7 @@ let state = {
       { message: "What are you doing?!" },
       { message: "What's up?!" },
     ],
+    newMessageText: "",
   },
   friendsBlock: {
     friends: [
@@ -50,22 +54,38 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
+export const addPost = () => {
   let newPost = {
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likeCount: 0,
     id: 5,
   };
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = "";
   rerenderEntireTree(state);
 };
 
-export let addMessage = (diologMessage) => {
-  let newMessage = {
-    message: diologMessage,
-  };
-  state.diologsPage.messages.push(newMessage);
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
   rerenderEntireTree(state);
 };
+
+export const addMessage = () => {
+  let newMessage = {
+    message: state.diologsPage.newMessageText,
+  };
+  state.diologsPage.messages.push(newMessage);
+  state.diologsPage.newMessageText = "";
+  rerenderEntireTree(state);
+};
+
+export const updateNewMessageText = (newText) => {
+  state.diologsPage.newMessageText = newText;
+  rerenderEntireTree(state);
+};
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
+}
 
 export default state;
