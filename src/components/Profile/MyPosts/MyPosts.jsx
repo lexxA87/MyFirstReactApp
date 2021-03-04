@@ -6,7 +6,7 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();
 
   let postsElement = props.posts.map((p) => (
-    <Post message={p.message} likeCount={p.likeCount} />
+    <Post message={p.message} likeCount={p.likeCount} id={p.id} />
   ));
 
   let addPost = () => {
@@ -22,7 +22,7 @@ const MyPosts = (props) => {
     <div className={s.postsBlock}>
       <h3>My posts</h3>
       <div>
-        New posts
+        New post
         <div>
           <textarea
             onChange={onPostChange}
