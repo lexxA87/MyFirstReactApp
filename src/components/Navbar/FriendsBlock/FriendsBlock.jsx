@@ -1,4 +1,3 @@
-
 import s from "./FriendsBlock.module.css";
 import FriendItem from "./FriensItem/FriendItem";
 

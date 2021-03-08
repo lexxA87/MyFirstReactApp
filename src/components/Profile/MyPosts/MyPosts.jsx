@@ -9,13 +9,13 @@ const MyPosts = (props) => {
     <Post message={p.message} likeCount={p.likeCount} id={p.id} />
   ));
 
-  let addPost = () => {
+  let onAddPost = () => {
     props.addPost();
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+    props.onPostChange(text);
   };
 
   return (
@@ -28,10 +28,11 @@ const MyPosts = (props) => {
             onChange={onPostChange}
             value={props.newPostText}
             ref={newPostElement}
+            placeholder="Enter your message"
           />
         </div>
         <div>
-          <button onClick={addPost}>Add post</button>
+          <button onClick={onAddPost}>Add post</button>
         </div>
       </div>
       <div className={s.oldPosts}>{postsElement}</div>

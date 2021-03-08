@@ -4,30 +4,30 @@ import Message from "./Message/Message";
 import React from "react";
 
 const Diologues = (props) => {
-  let diologsElements = props.diologPage.diologs.map((d) => (
+  let diologsElements = props.diologsPage.diologs.map((d) => (
     <DiologItem name={d.name} id={d.id} />
   ));
 
-  let messagesElements = props.diologPage.messages.map((m) => (
+  let messagesElements = props.diologsPage.messages.map((m) => (
     <Message message={m.message} />
   ));
 
   let newMessageElement = React.createRef();
 
-  let addMessage = () => {
+  let onAddMessage = () => {
     props.addMessage();
   };
 
   let onMessageChange = () => {
     let text = newMessageElement.current.value;
-    props.updateNewMessageText(text);
+    props.onMessageChange(text);
   };
 
   return (
     <div className={s.diologs}>
       <div className={s.diologsItems}>{diologsElements}</div>
       <div className={s.messages}>
-        {messagesElements}
+        <div>{messagesElements}</div>
         <hr />
         <div>
           New message
@@ -35,11 +35,12 @@ const Diologues = (props) => {
             <textarea
               ref={newMessageElement}
               onChange={onMessageChange}
-              value={props.diologPage.newMessageText}
+              value={props.diologsPage.newMessageText}
+              placeholder="Enter your message"
             />
           </div>
           <div>
-            <button onClick={addMessage}>Add message</button>
+            <button onClick={onAddMessage}>Send</button>
           </div>
         </div>
       </div>

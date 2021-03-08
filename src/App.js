@@ -1,6 +1,6 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
-import Diologues from "./components/Diologues/Diologues";
+import DiologuesContainer from "./components/Diologues/DiologuesContainer";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Music from "./components/Music/Music";
@@ -13,27 +13,12 @@ const App = (props) => {
   return (
     <div className="app-wrapper">
       <Header />
-      <Navbar state={props.state.friendsBlock} />
+      <Navbar state={props.state.sidebar.friendsBlock} />
       <div className="app-wrapper-content">
-        <Route
-          path="/profile"
-          render={() => (
-            <Profile
-              profilePage={props.state.profilePage}
-              addPost={props.addPost}
-              updateNewPostText={props.updateNewPostText}
-            />
-          )}
-        />
+        <Route path="/profile" render={() => <Profile store={props.store} />} />
         <Route
           path="/messages"
-          render={() => (
-            <Diologues
-              diologPage={props.state.diologsPage}
-              addMessage={props.addMessage}
-              updateNewMessageText={props.updateNewMessageText}
-            />
-          )}
+          render={() => <DiologuesContainer store={props.store} />}
         />
         <Route path="/news" render={() => <News />} />
         <Route path="/music" render={() => <Music />} />
