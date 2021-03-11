@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import FriendsBlock from './FriendsBlock/FriendsBlock';
+import FriendsBlockContainer from './FriendsBlock/FriendsBlockContainer';
 import s from './Navbar.module.css';
 
 const Navbar = (props) =>{
@@ -26,7 +26,7 @@ const Navbar = (props) =>{
     
     </nav>
       
-      <FriendsBlock state={props.state}/>
+      <FriendsBlockContainer />
     </div>
     
     
