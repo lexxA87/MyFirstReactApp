@@ -1,5 +1,6 @@
 import s from "./ProfileInfo.module.css";
 import PreLoader from "../../Common/PreLoader/PreLoader";
+import userPhoto from "../../../assets/images/user.jpg";
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -13,7 +14,14 @@ const ProfileInfo = (props) => {
       </div>
       <div className={s.discription}>
         {" "}
-        <img src={props.profile.photos.large} />
+        <img
+          src={
+            props.profile.photos.large != null
+              ? props.profile.photos.large
+              : userPhoto
+          }
+        />
+        {/*<img src={props.profile.photos.large} />*/}
         ava + discription
       </div>
     </div>

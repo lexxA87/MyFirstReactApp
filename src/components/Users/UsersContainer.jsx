@@ -7,7 +7,7 @@ import {
   setUsers,
   toggleIsFetching,
   unfollow,
-} from "../../redux/users-reducer ";
+} from "../../redux/users-reducer";
 import Users from "./Users";
 import * as axios from "axios";
 import PreLoader from "../Common/PreLoader/PreLoader";
