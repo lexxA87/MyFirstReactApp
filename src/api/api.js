@@ -38,3 +38,11 @@ export const authAPI = {
     });
   },
 };
+
+export const profileAPI = {
+  myProfile(id) {
+    return instance.get(`profile/${id}`).then((responce) => {
+      return responce.data;
+    });
+  }
+}
