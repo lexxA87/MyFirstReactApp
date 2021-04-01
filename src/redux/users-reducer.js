@@ -98,6 +98,8 @@ export const toggleFollowingProgress = (isFetching, userID) => ({
   userID,
 });
 
+//Санки:
+
 export const getUsers = (currentPage, pageSize) => {
   return (dispatch) => {
     dispatch(toggleIsFetching(true));

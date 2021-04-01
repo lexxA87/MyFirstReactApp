@@ -2,6 +2,7 @@ import s from "./Diologues.module.css";
 import DiologItem from "./DiologItem/DiologItem";
 import Message from "./Message/Message";
 import React from "react";
+import { Redirect } from "react-router";
 
 const Diologues = (props) => {
   let diologsElements = props.diologsPage.diologs.map((d) => (
@@ -22,6 +23,8 @@ const Diologues = (props) => {
     let text = newMessageElement.current.value;
     props.onMessageChange(text);
   };
+
+  if (!props.isAuth) return <Redirect to="/login" />;
 
   return (
     <div className={s.diologs}>
