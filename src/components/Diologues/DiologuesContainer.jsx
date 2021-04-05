@@ -5,11 +5,13 @@ import {
   updateNewMessageTextActionCreator,
 } from "../../redux/diologs-reducer";
 import Diologues from "./Diologues";
+import { Redirect } from "react-router";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
+import { compose } from "redux";
 
 const mapStateToProps = (state) => {
   return {
     diologsPage: state.diologsPage,
-    isAuth: state.auth.isAuth,
   };
 };
 
@@ -25,9 +27,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const DiologuesContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  withAuthRedirect
 )(Diologues);
-
-export default DiologuesContainer;

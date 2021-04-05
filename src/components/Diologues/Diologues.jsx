@@ -24,8 +24,6 @@ const Diologues = (props) => {
     props.onMessageChange(text);
   };
 
-  if (!props.isAuth) return <Redirect to="/login" />;
-
   return (
     <div className={s.diologs}>
       <div className={s.diologsItems}>{diologsElements}</div>
