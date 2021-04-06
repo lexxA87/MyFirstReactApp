@@ -2,7 +2,6 @@ import s from "./Diologues.module.css";
 import DiologItem from "./DiologItem/DiologItem";
 import Message from "./Message/Message";
 import React from "react";
-import { Redirect } from "react-router";
 
 const Diologues = (props) => {
   let diologsElements = props.diologsPage.diologs.map((d) => (

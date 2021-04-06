@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "./App.css";
 import DiologuesContainer from "./components/Diologues/DiologuesContainer";
 import Footer from "./components/Footer/Footer";

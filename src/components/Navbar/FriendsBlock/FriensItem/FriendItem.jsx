@@ -7,7 +7,7 @@ const FriendItem = (props) => {
   return (
     <div className={s.friend}>
       <NavLink to={path}>
-        <img src={props.avatarSrc} className={s.avatarImage} />
+        <img alt={""} src={props.avatarSrc} className={s.avatarImage} />
         <div>
           <span>{props.name}</span>
         </div>

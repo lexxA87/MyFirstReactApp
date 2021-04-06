@@ -1,6 +1,6 @@
 import reportWebVitals from "./reportWebVitals";
 import store from "./redux/redux-store";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import App from "./App";
 import ReactDOM from "react-dom";

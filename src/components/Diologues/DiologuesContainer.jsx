@@ -1,11 +1,10 @@
-import React from "react";
 import { connect } from "react-redux";
 import {
   addMessageActionCreator,
   updateNewMessageTextActionCreator,
 } from "../../redux/diologs-reducer";
 import Diologues from "./Diologues";
-import { Redirect } from "react-router";
+
 import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import { compose } from "redux";
 

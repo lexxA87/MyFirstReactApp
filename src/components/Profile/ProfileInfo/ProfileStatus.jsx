@@ -20,7 +20,7 @@ class ProfileStatus extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={s.discription}>
         {!this.state.editMode && (
           <div>
             <span onDoubleClick={this.activateEditMode}>
