@@ -1,6 +1,7 @@
 import s from "./ProfileInfo.module.css";
 import PreLoader from "../../Common/PreLoader/PreLoader";
 import userPhoto from "../../../assets/images/user.jpg";
+import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -9,9 +10,9 @@ const ProfileInfo = (props) => {
 
   return (
     <div>
-      <div className={s.mainImage}>
+      {/*<div className={s.mainImage}>
         <img src="https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg" />
-      </div>
+  </div>*/}
       <div className={s.discription}>
         {" "}
         <img
@@ -22,7 +23,7 @@ const ProfileInfo = (props) => {
           }
         />
         {/*<img src={props.profile.photos.large} />*/}
-        ava + discription
+        <ProfileStatus status={"Hi! It`s my first status!"} />
       </div>
     </div>
   );
