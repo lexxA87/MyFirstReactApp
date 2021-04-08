@@ -2,6 +2,7 @@ import s from "./Diologues.module.css";
 import DiologItem from "./DiologItem/DiologItem";
 import Message from "./Message/Message";
 import React from "react";
+import { Field, reduxForm } from "redux-form";
 
 const Diologues = (props) => {
   let diologsElements = props.diologsPage.diologs.map((d) => (
@@ -12,15 +13,10 @@ const Diologues = (props) => {
     <Message message={m.message} />
   ));
 
-  let newMessageElement = React.createRef();
-
-  let onAddMessage = () => {
-    props.addMessage();
-  };
-
-  let onMessageChange = () => {
-    let text = newMessageElement.current.value;
-    props.onMessageChange(text);
+  let addNewMessage = (values) => {
+    //debugger;
+    //alert(values.newMessageBody);
+    props.addMessage(values.newMessageBody);
   };
 
   return (
@@ -29,23 +25,32 @@ const Diologues = (props) => {
       <div className={s.messages}>
         <div>{messagesElements}</div>
         <hr />
-        <div>
-          New message
-          <div>
-            <textarea
-              ref={newMessageElement}
-              onChange={onMessageChange}
-              value={props.diologsPage.newMessageText}
-              placeholder="Enter your message"
-            />
-          </div>
-          <div>
-            <button onClick={onAddMessage}>Send</button>
-          </div>
-        </div>
+        <AddMessageFormRedux onSubmit={addNewMessage} />
       </div>
     </div>
   );
 };
+
+const AddMessageForm = (props) => {
+  return (
+    <form onSubmit={props.handleSubmit}>
+      New message
+      <div>
+        <Field
+          component={"textarea"}
+          placeholder={"Enter your message"}
+          name={"newMessageBody"}
+        />
+      </div>
+      <div>
+        <button>Send</button>
+      </div>
+    </form>
+  );
+};
+
+const AddMessageFormRedux = reduxForm({ form: "diologAddMessageForm" })(
+  AddMessageForm
+);
 
 export default Diologues;

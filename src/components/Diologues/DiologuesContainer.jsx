@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import {
   addMessageActionCreator,
-  updateNewMessageTextActionCreator,
 } from "../../redux/diologs-reducer";
 import Diologues from "./Diologues";
 
@@ -16,13 +15,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onMessageChange: (text) => {
-      let action = updateNewMessageTextActionCreator(text);
-      dispatch(action);
-    },
-    addMessage: () => {
-      dispatch(addMessageActionCreator());
-    },
+    addMessage: (newMessageText) => {
+      dispatch(addMessageActionCreator(newMessageText));
+    }
   };
 };
 
