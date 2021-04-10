@@ -3,6 +3,8 @@ import DiologItem from "./DiologItem/DiologItem";
 import Message from "./Message/Message";
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import { maxLengthCreator, required } from "../../utils/validators/validators";
+import { TextArea } from "../Common/FormsControls/FormsControls";
 
 const Diologues = (props) => {
   let diologsElements = props.diologsPage.diologs.map((d) => (
@@ -30,16 +32,17 @@ const Diologues = (props) => {
     </div>
   );
 };
-
+const maxLength50 = maxLengthCreator(50);
 const AddMessageForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       New message
       <div>
         <Field
-          component={"textarea"}
+          component={TextArea}
           placeholder={"Enter your message"}
           name={"newMessageBody"}
+          validate={[required, maxLength50]}
         />
       </div>
       <div>
