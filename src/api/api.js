@@ -33,14 +33,12 @@ export const followAPI = {
 
 export const authAPI = {
   authMe() {
-    return instance.get(`auth/me`).then((responce) => {
-      return responce.data;
-    });
+    return instance.get(`auth/me`);
   },
-  postAuthLogin(formData) {
-    return instance.post(`auth/login`, { formData });
+  login(email, password, rememberMe = false) {
+    return instance.post(`auth/login`, { email, password, rememberMe });
   },
-  deleteAuthLogin() {
+  logout() {
     return instance.delete(`auth/login`);
   },
 };
