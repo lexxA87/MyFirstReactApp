@@ -2,6 +2,11 @@
 .formsControle.error textarea {
   border: solid red 2px;
 }
-.formsControle.error span{
-    color: red;
+.formsControle.error span {
+  color: red;
+}
+
+.formSummaryError {
+  color: red;
+  padding: 10px;
 }
