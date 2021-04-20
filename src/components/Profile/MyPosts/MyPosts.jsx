@@ -9,7 +9,8 @@ import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-  let postsElement = props.posts.map((p) => (
+  //console.log("render myPOsts!");
+  let postsElement = [...props.posts].reverse().map((p) => (
     <Post message={p.message} likeCount={p.likeCount} id={p.id} />
   ));
 

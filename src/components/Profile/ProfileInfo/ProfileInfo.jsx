@@ -1,7 +1,7 @@
 import s from "./ProfileInfo.module.css";
 import PreLoader from "../../Common/PreLoader/PreLoader";
 import userPhoto from "../../../assets/images/user.jpg";
-import ProfileStatus from "./ProfileStatus";
+//import ProfileStatus from "./ProfileStatus";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
