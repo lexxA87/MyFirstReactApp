@@ -1,0 +1,12 @@
+.selectedPage {
+    font-weight: bolder;
+    color: blue;
+}
+
+.pagesNumber {
+    cursor: pointer;
+}
+
+.pagesNumber span {
+    margin: 10px;
+}

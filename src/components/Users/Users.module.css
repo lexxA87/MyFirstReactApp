@@ -1,23 +1,12 @@
 .item {
-  color: chocolate;
-  margin-top: 10px;
-  font-size: 20px;
+    color: chocolate;
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 .item img {
-  width: 50px;
-  border-radius: 50%;
+    width: 50px;
+    border-radius: 50%;
 }
 
-.selectedPage {
-  font-weight: bolder;
-  color: blue;
-}
 
-.pagesNumber {
-  cursor: pointer;
-}
-
-.pagesNumber span {
-  margin: 10px;
-}
