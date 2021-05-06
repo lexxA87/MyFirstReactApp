@@ -10,3 +10,7 @@
 .pagesNumber span {
     margin: 10px;
 }
+
+.pagesNumber button {
+    cursor: pointer;
+}
